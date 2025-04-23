@@ -92,7 +92,7 @@ def speak(text, language):
         tts = gTTS(text=text, lang=lang, slow=False)
         filename = "temp_audio.mp3"
         tts.save(filename)
-        playsound.playsound(filename)
+        st.audio(filename)
         os.remove(filename)
     except Exception as e:
         st.error(f"Error during speech synthesis: {e}")
